@@ -1,0 +1,17 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+
+# Node Modules #
+/node_modules/
+
+# Sass Cache remove #
+#####################
+*.sass-cache
+/.sass-cache
+**.sass-cache**
+
+# Css Map remove #
+####################
+*.css.map
+/*.css.map
+**.css.map**
+/*.map/

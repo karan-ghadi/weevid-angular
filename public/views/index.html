@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="weevidApp" ng-controller="mainCtrl">
+
+	<head>
+		<base href="/" />
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+		<!-- title -->
+		<title>Weevid | Home</title>
+		<!-- Css includes -->
+		<script src="../assets/css/stylesheets.js"></script>
+
+	</head>
+
+	<body>
+		<!-- Header::Starts -->
+		<!-- <header ng-hide=" pageRoute === '/login' || pageRoute === '/sign-up' "> -->
+		<header>
+			<nav class="navbar navbar-expand-lg">
+				<div class="container-fluid">
+					<!-- Secondary Menu Icon -->
+					<a class="navbar-brand" href="/">
+						<i class="fas fa-bars"></i>
+					</a>
+
+					<!-- Logo -->
+					<a class="navbar-brand" href="/">
+						<img alt="" class="img-fluid" src="assets/images/weevid-logo.png">
+					</a>
+
+					<!-- Nav-bar toggle -->
+					<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+						<span class="navbar-toggler-icon">
+							<i class="fas fa-bars"></i>
+						</span>
+					</button>
+
+					<!-- Collaspe Nav-bar -->
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<!-- Search Bar -->
+						<form class="form-inline my-2 my-lg-0">
+							<input aria-label="Search" class="form-control w-100" placeholder="Search" type="search">
+							<button class="btn btn-outline-success flex-shrink-1" type="submit">
+								<i class="fas fa-search"></i>
+							</button>
+						</form>
+
+						<!-- Nav-links -->
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item active">
+								<a class="nav-link active" href="/create1-1">Create
+									<span class="sr-only">(current)</span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/login">Log In</a>
+							</li>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/sign-up">Sign Up</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<!-- ./Header::Ends -->
+
+		<!-- Main Content::Start -->
+		<main>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-8 offset-sm-2">
+						<div ng-view></div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!-- ./Main Content::Ends -->
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="../assets/js/jquery.min.js"></script>
+		<script src="../assets/js/popper.min.js"></script>
+		<script src="../assets/js/fabric.min.js"></script>
+
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="./app/controllers/controllers.js "></script>
+	</body>
+
+</html>

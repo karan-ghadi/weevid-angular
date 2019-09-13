@@ -1,0 +1,34 @@
+1. Dialog box:
+Hence forth all the dialog box needs to have green outline highlighter instead for blue. - Done.
+
+2. Video Thumbnails:
+All video thumbnails to have “like/heart”, “links” symbol and hashtags. -Done
+
+3. Caption on the video:
+When you enter the caption in the dialog box is should appear on the video like how it appears in the right image (from giphy) cause its for the user to understand that he/she can move the caption around over the video and can reduce the shape and size of it by dragging it from the right bottom corner. - reducing shape size remains.
+
+4. Outline around the:
+The caption over the video should have an outline around its fonts. Black outline for all the colours except black font. And white outine for Black font. - Done.
+
+5. Share Options:
+Fix the facebook logo and add whats app icon after facebook also add a whats app icon after facebook. - Done.
+
+6.The 3 dots that represents “more”:
+When you click the 3 dots it will give you “Report video” option.
+
+7. Link icon click interaction on the video:
+So when you click the link icon on the any video thumbnail the entire thumbnail turns green with a message “Link copied to clipboard!” as shown in the right image - done.
+
+8. The main video that gets uploaded after merging and adding hashtags:
+Can you add elements like the timeline, pause, volume, full screen, settings and share like the one on the right side. Basically how a youtube video looks at the bottom bit. - Done (HTML5 video default contols can be added).
+
+9. When you click the rocket/share icon on the bigger video :
+When you click the rocket/share icon on the video, the entire video becomes dark and shows social media sharing icons that are clickable lie the one in the right image. - Done
+
+10. reduce margin of add more video input - Done.
+
+11. add copy to clipboard on all videos - Done.
+
+12. like icon change on click - Done.
+
+13. remove validation from create page - Done.

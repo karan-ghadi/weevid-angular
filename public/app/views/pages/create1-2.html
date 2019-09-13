@@ -1,0 +1,162 @@
+<div class="create-wrapper" ng-controller="draggableCtrl">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="back-label">
+				<!-- back button -->
+				<a href="" ng-click="goBack()">
+					<i class="fas fa-angle-left"></i>Back
+				</a>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="video-src">
+				<!-- video and caption text container -->
+				<div class="video-wrapper">
+					<!-- caption box -->
+					<!-- draggable box
+					<div class="caption-wrapper" id="caption-wrapper">
+						<div class="caption-handler"></div>
+						<div class="caption-dragger"></div>
+						<span ng-class="states.activeColor" id="resizeSpan">
+							<span class="flexFont" id="flexFont" ng-class="states.activeFont | lowercase">
+								{{ videoObj.captionText }}
+							</span>
+						</span>
+					</div>
+					<!-- ./draggable box -->
+					<canvas id="c" style="z-index: 9999;"></canvas>
+					<!-- creator info -->
+					<!-- video -->
+					<video id="videoId" muted class="video-caption-wrapper">
+						<source src="../../../assets/videos/temp-video.mp4" type="video/mp4">
+					</video>
+				</div>
+				<!-- range slide container -->
+				<!-- start timer -->
+				<div class="slider-container">
+					<div class="slider-stats d-flex justify-content-start align-items-center">
+						<h6 class="slider-label">Start Time</h6>
+						<div class="form-group d-flex justify-content-start align-items-center">
+							<span>
+								<i class="fas fa-chevron-left"></i>
+							</span>
+							<input aria-describedby="startValue" class="form-control" id="startValue" ng-model="startValue" type="text" />
+							<span>
+								<i class="fas fa-chevron-right"></i>
+							</span>
+
+						</div>
+					</div>
+					<input ng-change="startValueFunc(startnum)" ng-max="1200" ng-min="0" ng-model="startnum" step="1" type="range" value="0">
+					<p class="text-right count">{{startValue}}</p>
+				</div>
+				<!-- duration timer -->
+				<div class="slider-container slider2">
+					<div class="slider-stats d-flex justify-content-start align-items-center">
+						<h6 class="slider-label">Duration</h6>
+						<div class="form-group d-flex justify-content-start align-items-center">
+							<span>
+								<i class="fas fa-chevron-left"></i>
+							</span>
+							<input aria-describedby="duration" class="form-control" id="duration" ng-model="duration" type="text" />
+							<span>
+								<i class="fas fa-chevron-right"></i>
+							</span>
+						</div>
+					</div>
+					<input ng-change="durFunc(durnum)" ng-max="1200" ng-min="0" ng-model="durnum" step="1" type="range" value="0">
+					<div class="fill"></div>
+					<p class="text-right count">{{duration}}</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- form for caption stying -->
+			<form name="addVideoForm" ng-submit="onaddVideoSubmit(videoObj)">
+				<div class="videoDetails-container">
+					<div class="inner-box">
+						<h4>Caption</h4>
+						<div class="form-group">
+							<!-- caption input -->
+							<input class="form-control" name="captionText" ng-model="captionText" placeholder="Enter your caption" type="text" id="captionText" />
+						</div>
+						<!-- colors boxes og
+            <div class="colors-container d-flex justify-content-between">
+              <div
+                ng-class="color.class == states.activeColor ? '{{
+                  color.class
+                }} active' : color.class"
+                ng-click="states.activeColor = color.class"
+                ng-repeat="color in colors"
+              ></div>
+            </div>-->
+						<!-- colors boxes testing-->
+						<div class="colors-container d-flex justify-content-between">
+							<div ng-class="color.class == states.activeColor ? '{{
+                  color.class
+                }} active' : color.class" ng-repeat="color in colors" ng-click="setColor(color)"></div>
+						</div>
+					</div>
+					<div class="inner-box">
+						<h4>Style</h4>
+						<!-- font styling buttons 
+						<div class="row">
+							<div class="col-sm-6" ng-repeat="font in fonts">
+								<button class="btn btn-block button-darkgray" ng-class="font.class == states.activeFont ? '{{font.class}} active' : font.class" ng-click="states.activeFont = font.class" type="button">
+									{{font.class}}
+								</button>
+							</div>
+						</div>-->
+						<div class="row">
+							<div class="col-sm-6" ng-repeat="font in fonts">
+								<button class="btn btn-block button-darkgray" ng-class="font.class == states.activeFont ? '{{font.class}} active' : font.class" ng-click="setFont(font)" type="button">
+									{{font.class}}
+								</button>
+							</div>
+						</div>
+						<!-- add another video -->
+						<div class="row">
+							<div class="col-sm-12">
+								<button class="btn btn-block button-lightblue font-weight-bold" ng-click="onAddanotherVideo()" type="button">
+									<img alt="" class="img-fluid" src="assets/images/icons/add-video-btn-icon.png">
+									Add Another Video
+								</button>
+							</div>
+						</div>
+						<!-- continue to next step -->
+						<div class="row">
+							<div class="col-sm-12">
+								<button class="btn btn-block button-green no-margin font-weight-bold" type="submit">Continue to Upload</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-md-12" ng-show="addAnotherVideo">
+			<div class="video-src video-src-spacing">
+				<form name="CreateVideofrm" class="video-control" novalidate>
+					<div class="form-group">
+						<div class="d-flex">
+							<!-- add new video src -->
+							<input class="form-control" id="ytUrl" name="ytUrl" ng-model="urlObj.yt" value="{{urlObj.yt}}" placeholder="Copy and paste video url from youtube" required type="url" ng-change="getNewVideoUrl(urlObj)" ng-class="{'border border-danger': CreateVideofrm.ytUrl.$dirty && CreateVideofrm.ytUrl.$invalid }" />
+							<i class="fas fa-circle-notch fa-spin fa-3x loader" ng-show="loader"></i>
+							<button class="btn button-darkgray" ng-click="onClose()" type="button" ng-show="!loader">
+								<i class="fas fa-times" ng-show="!loader"></i>
+								<!-- loader for video -->
+							</button>
+						</div>
+						<!-- error message -->
+						<div class="form-group d-block" ng-show="CreateVideofrm.ytUrl.$dirty && CreateVideofrm.ytUrl.$invalid">
+							<small class="text-danger" ng-show="CreateVideofrm.ytUrl.$error.required">Required</small>
+							<small class="text-danger" ng-show="CreateVideofrm.ytUrl.$error.url">Unable to retrieve
+								media</small>
+							<small class="text-danger" ng-show="CreateVideofrm.ytUrl.$error.url">{{ urlObj.yt }}</small>
+						</div>
+
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

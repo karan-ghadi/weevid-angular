@@ -1,0 +1,36 @@
+<div class="form-wrapper">
+    <div class="form-label">
+        <h3>Log In</h3>
+    </div>
+    <div class="d-flex justify-content-center">
+        <form name="loginForm" ng-submit="onLogin(loginObj)" novalidate>
+            <div class="form-group">
+                <input type="text" autofocus class="form-control" name="email" ng-model="loginObj.email"
+                    placeholder="Email or Username" required />
+                <small class="text-danger" ng-show="loginForm.$submitted && loginForm.email.$error.required">*Field
+                    can't be left blank.</small>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password" ng-model="loginObj.password"
+                    placeholder="Password" required />
+                <small class="text-danger" ng-show="loginForm.$submitted && loginForm.password.$error.required">*Field
+                    cant be left blank.</small>
+            </div>
+            <div class="form-elements form-check">
+                <input checked="checked" class="css-checkbox form-check-input" id="chkselct" name="chkselct"
+                    ng-model="chkselct" type="checkbox" />
+                <label class="css-label form-check-label" for="chkselct">Remember me</label>
+            </div>
+
+            <div class="form-elements float-right">
+                <a class="link" href="/account-settings/password">Forgot password?</a>
+            </div>
+
+            <button class="btn btn-block button-green"
+                ng-disabled="loginForm.email.$invalid && loginForm.password.$invalid" type="submit">Log In</button>
+            <h6>Or</h6>
+            <button class="btn btn-block button-blue" type="button">Connect with Facebook</button>
+            <a class="link" href="/sign-up">Don’t have an account?</a>
+        </form>
+    </div>
+</div>

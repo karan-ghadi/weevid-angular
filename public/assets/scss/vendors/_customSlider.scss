@@ -1,0 +1,121 @@
+// @import url('https://rsms.me/inter/inter-ui.css');
+.slider-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin: 15px 0;
+}
+
+.range-style {
+    position: relative;
+    z-index: 1000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 4px;
+    background: #9E9E9E;
+}
+
+.thumb-style {
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #1BB76E;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999999;
+    transition: background 0.3s ease-in-out;
+}
+
+input[type='range'] {
+    position: relative;
+    z-index: 1000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 4px;
+    background: #9E9E9E;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    position: relative;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #1BB76E;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 99999;
+    transition: background 0.3s ease-in-out;
+}
+
+input[type='range']::-webkit-slider-thumb:hover,
+input[type='range']::-webkit-slider-thumb:active {
+    background: #1BB76E;
+    transition: background 0.3s ease-in-out;
+}
+
+input[type='range']::-moz-range-track {
+    background: #9E9E9E;
+}
+
+input[type='range']::-moz-range-thumb {
+    position: relative;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #1BB76E;
+    border: 1px solid #1BB76E;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 99999;
+    transition: background 0.3s ease-in-out;
+}
+
+input[type='range']::-moz-range-thumb:hover,
+input[type='range']::-moz-range-thumb:active {
+    background: #1BB76E;
+    transition: background 0.3s ease-in-out;
+}
+
+.fill {
+    position: absolute;
+    z-index: 9999;
+    top: 44px;
+    height: 4px;
+    width: 0%;
+    border-radius: 0;
+    background: #1BB76E;
+}
+
+.rzslider .rz-pointer {
+    background: #1BB76E;
+    width: 20px;
+    height: 20px;
+    top: -8.7px;
+    &:after {
+        display: none;
+    }
+}
+
+.rzslider .rz-selection {
+    background: #1BB76E !important;
+}
+
+.rzslider .rz-bar {
+    background: #9E9E9E;
+}

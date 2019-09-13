@@ -1,0 +1,61 @@
+<div class="create-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="heading-label">
+                <h3>Make and share short videos and mashups</h3>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="video-src">
+                <form name="CreateVideofrm" class="video-control" novalidate>
+                    <div class="form-group">
+                        <!-- input scr for video -->
+                        <input class="form-control" id="ytUrl" name="ytUrl" ng-model="urlObj.yt" value="{{urlObj.yt}}"
+                            placeholder="Copy and paste video url from youtube" required type="url"
+                            ng-change="getVideoUrl(urlObj)"
+                            ng-class="{'border border-danger': CreateVideofrm.ytUrl.$dirty && CreateVideofrm.ytUrl.$invalid }" />
+                        <!-- loader for video -->
+                        <i class=" text-danger fas fa-circle-notch fa-spin fa-3x loader" ng-show="loader"></i>
+                        <!-- error message -->
+                        <div class="form-group" ng-show="CreateVideofrm.ytUrl.$dirty && CreateVideofrm.ytUrl.$invalid">
+                            <small class="text-danger" ng-show="CreateVideofrm.ytUrl.$error.required">Required</small>
+                            <small class="text-danger" ng-show="CreateVideofrm.ytUrl.$error.url">Unable to retrieve
+                                media</small>
+                            <small class="text-danger" ng-show="CreateVideofrm.ytUrl.$error.url">{{ urlObj.yt }}</small>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- steps to create video -->
+            <div class="createVideo-steps d-md-flex justify-content-center">
+                <div>
+                    <div class="steps-image">
+                        <img alt="" class="img-fluid" src="assets/images/create-videos/step-one.png" />
+                    </div>
+                    <p>Found something online? <br>Paste URL link</p>
+                </div>
+                <div class="steps-arrow">
+                    <img alt="" class="img-fluid" src="assets/images/create-videos/right-arrow.png" />
+                </div>
+                <div>
+                    <div class="d-lg-inline-flex  justify-content-center steps-image">
+                        <img alt="" class="img-fluid" src="assets/images/create-videos/step-two-a.png"
+                            style="height:56px;" />
+                        <p>or</p>
+                        <img alt="" class="img-fluid" src="assets/images/create-videos/step-two-b.png" />
+                    </div>
+                    <p>Edit a video or <br> merge 2 videos</p>
+                </div>
+                <div class="steps-arrow">
+                    <img alt="" class="img-fluid" src="assets/images/create-videos/right-arrow.png" />
+                </div>
+                <div>
+                    <div class="steps-image">
+                        <img alt="" class="img-fluid" src="assets/images/create-videos/step-three.png" />
+                    </div>
+                    <p>Create a new video</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

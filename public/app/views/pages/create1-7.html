@@ -1,0 +1,241 @@
+<div class="create-wrapper">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="label source-label">
+                <h3>Source</h3>
+            </div>
+            <div class="source">
+                <h4>www.youtube.com</h4>
+            </div>
+            <div class="label tags-label">
+                <h3>Trending tags</h3>
+            </div>
+            <ul class="trending-tags">
+                <li class="tags">
+                    <a href="#">#Christmas</a>
+                </li>
+                <li class="tags">
+                    <a href="#">#Santa</a>
+                </li>
+                <li class="tags">
+                    <a href="#">#Gifts</a>
+                </li>
+                <li class="tags">
+                    <a href="#">#Bright</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="video-wrapper">
+                        <video muted id="videoId" controls="true">
+                            <source src="../../../assets/videos/temp-video.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="label video-label">
+                        <h3>Video/Caption</h3>
+                    </div>
+                    <div class="video-stats">
+                        <div class="d-flex flex-row">
+                            <div class="stats-info">
+                                <div class="stats-img">
+                                    <img alt="" class="img-fluid" src="./assets/images/icons/visibility.png">
+                                </div>
+                                <div class="count">
+                                    <span>12467</span>
+                                </div>
+                            </div>
+                            <div class="stats-info">
+                                <div class="stats-img">
+                                    <img alt=""  class="img-fluid animate-show-hide normalHeart" src="../../../assets/images/icons/like.png">
+                                    <img alt=""  class="img-fluid animate-show-hide activeHeart" src="../../../assets/images/icons/heart-colour.png" />
+                                </div>
+                                <div class="count">
+                                    <span>324</span>
+                                </div>
+                            </div>
+                            <div class="share-img" ng-show="hideCloseIcon">
+                                <a href="#" ng-click="reportVideo()">
+                                    <img alt="" class="img-fluid" src="./assets/images/icons/ellipsis.png">
+                                </a>
+                            </div>
+                            <div class="report-video animate-show-hide" ng-hide="hideCloseIcon">
+                                <a href="#" ng-click="closeOptions()">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                                <span ng-click="reported($event)" class="reported-text">Report Video</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="video-tags">
+                        <div class="d-flex flex-row">
+                            <div class="tags-text">
+                                <a href="#">#This</a>
+                            </div>
+                            <div class="tags-text">
+                                <a href="#">#Is</a>
+                            </div>
+                            <div class="tags-text">
+                                <a href="#">#Where</a>
+                            </div>
+                            <div class="tags-text">
+                                <a href="#">#Hashtags</a>
+                            </div>
+                            <div class="tags-text">
+                                <a href="#">#Will</a>
+                            </div>
+                            <div class="tags-text">
+                                <a href="#">#Come</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="label share-label">
+                        <h3>Share</h3>
+                    </div>
+                    <div class="social-links-wrapper">
+                        <div class="d-flex flex-row">
+                            <div class="social-link facebook">
+                                <a href="#">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                            </div>
+                            <div class="social-link whatsapp">
+                                <a href="#">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </div>
+                            <div class="social-link twitter">
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                            <div class="social-link reddit">
+                                <a href="#">
+                                    <i class="fab fa-reddit-alien"></i>
+                                </a>
+                            </div>
+                            <div class="social-link instagram">
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="social-link pinterest">
+                                <a href="#">
+                                    <i class="fab fa-pinterest-p"></i>
+                                </a>
+                            </div>
+                            <div class="social-link tumblr">
+                                <a href="#">
+                                    <i class="fab fa-tumblr"></i>
+                                </a>
+                            </div>
+                            <div class="social-link envelope">
+                                <a href="#">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="links-wrapper">
+                        <div class="tab-wrapper d-flex justify-content-start">
+                            <ul class="nav nav-tabs" id="linksTab" role="tablist">
+                                <li class="nav-item">
+                                    <a aria-controls="link" aria-selected="true" class="nav-link" data-toggle="tab" href="#link" id="link-tab" role="tab">Copy Link</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a aria-controls="embed" aria-selected="false" class="nav-link" data-toggle="tab" href="#embed" id="embed-tab" role="tab">Embed</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a aria-controls="download" aria-selected="false" class="nav-link" data-toggle="tab" href="#download" id="download-tab" role="tab">Download</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tab-content d-flex justify-content-center" id="linksTabContent">
+                            <div aria-labelledby="link-tab" class="tab-pane fade" id="link" role="tabpanel">
+                                <form>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">MP4</label>
+                                        <div class="col-sm-10">
+                                            <div class="input-group">
+                                                <input class="form-control" type="text">
+                                                <div class="input-group-append">
+                                                    <button class="btn button-green" type="button">Copy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Webm</label>
+                                        <div class="col-sm-10">
+                                            <div class="input-group">
+                                                <input class="form-control" type="text">
+                                                <div class="input-group-append">
+                                                    <button class="btn button-green" type="button">Copy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-2 col-form-label">Html5 Video</label>
+                                        <div class="col-sm-10">
+                                            <div class="input-group">
+                                                <input class="form-control" type="text">
+                                                <div class="input-group-append">
+                                                    <button class="btn button-green" type="button">Copy</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div aria-labelledby="embed-tab" class="tab-pane fade" id="embed" role="tabpanel"></div>
+                            <div aria-labelledby="download-tab" class="tab-pane fade" id="download" role="tabpanel">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="realated-videos-wrapper">
+                    <div class="col-md-12">
+                        <div class="label">
+                            <h3>Related Videos</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-6 col-xl-4" ng-repeat="video in videos">
+                                <div class="other-video">
+                                    <!-- copy to clipboard -->
+                                    <div class="copy-to-clipboard" ng-show='activeItem==video'>
+                                        <h4>Link copied to clipboard!</h4>
+                                    </div>
+                                    <!-- copy to clipboard -->
+                                    <!-- overlay -->
+                                    <div class="video-overlay">
+                                        <div class="share-icon d-flex justify-content-end">
+                                            <img alt=""  class="img-fluid animate-show-hide normalHeart" src="../../../assets/images/icons/like.png">
+                                            <img alt=""  class="img-fluid animate-show-hide activeHeart" src="../../../assets/images/icons/heart-colour.png" />
+                                            <img alt="" class="img-fluid" ng-click="setActive(video)" src="../../../assets/images/icons/link.png">
+                                        </div>
+                                        <div class="creator-info tags-info d-flex">
+                                            <span class="tags">#Hashtag</span>
+                                            <span class="tags">#Hashtag</span>
+                                            <span class="tags">#Hashtag</span>
+                                        </div>
+                                    </div>
+                                    <!-- ./overlay -->
+                                    <video id="{{video.id}}" muted ng-mouseenter="playVideo(video.id)" ng-mouseleave="pauseVideo(video.id)">
+                                        <source src="{{ video.videoSrc }}" type="video/mp4">
+                                        Your browser does not support HTML5 video.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

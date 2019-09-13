@@ -1,0 +1,411 @@
+<div class="home-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="heading-label">
+                    <h4>TRENDING VIDEOS</h4>
+                </div>
+            </div>
+            <div class="col-xl-6" ng-controller="vendorCtrl">
+                <!-- carousal ends -->
+                <data-owl-carousel class="owl-carousel" data-options="owlOptionsTestimonials">
+                    <div class="item" ng-repeat="video in trendingVideo" owl-carousel-item="">
+                        <div class="trending-video">
+                            <!-- share container 3 Tier-->
+                            <div class="shareLinks-container" ng-show="modalView">
+                                <div class="social-links-wrapper d-flex justify-content-between flex-column">
+                                    <div class="d-flex align-items-start w-100 justify-content-between">
+                                        <div>
+                                            <span ng-show>spacer</span>
+                                        </div>
+                                        <h4 class="heading">Share</h4>
+                                        <button type="button" class="close" aria-label="Close" ng-click="closeModal()">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="d-flex align-items-center flex-column w-100">
+                                        <div class="d-flex flex-row justify-content-center">
+                                            <div class="social-link facebook">
+                                                <a href="#">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </a>
+                                            </div>
+                                            <div class="social-link whatsapp">
+                                                <a href="#">
+                                                    <i class="fab fa-whatsapp"></i>
+                                                </a>
+                                            </div>
+                                            <div class="social-link twitter">
+                                                <a href="#">
+                                                    <i class="fab fa-twitter"></i>
+                                                </a>
+                                            </div>
+                                            <div class="social-link reddit">
+                                                <a href="#">
+                                                    <i class="fab fa-reddit-alien"></i>
+                                                </a>
+                                            </div>
+                                            <div class="social-link instagram">
+                                                <a href="#">
+                                                    <i class="fab fa-instagram"></i>
+                                                </a>
+                                            </div>
+                                            <div class="social-link pinterest">
+                                                <a href="#">
+                                                    <i class="fab fa-pinterest-p"></i>
+                                                </a>
+                                            </div>
+                                            <div class="social-link tumblr">
+                                                <a href="#">
+                                                    <i class="fab fa-tumblr"></i>
+                                                </a>
+                                            </div>
+                                            <div class="social-link envelope">
+                                                <a href="#">
+                                                    <i class="fas fa-envelope"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="input-group mt-3 w-75">
+                                            <input type="text" class="form-control" placeholder="https://gfycat.com/joyouspeskycolt" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-success" type="button" id="button-addon2">Copy</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex align-items-end">
+                                        <div class="d-flex flex-row w-100 justify-content-center">
+                                            <div class="options">
+                                                <a ng-click="openEmbed()">
+                                                    <div class="clearfix">
+                                                        <div class="float-left">
+                                                            <img class="img-fluid float-left" src="../../../assets/images/icons/embed.png" alt="">
+                                                        </div>
+                                                        <div class="float-right">
+                                                            <span>EMBED</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="options">
+                                                <a ng-click="openDownload()">
+                                                    <div class="clearfix">
+                                                        <div class="float-left">
+                                                            <img class="img-fluid float-left" src="../../../assets/images/icons/download.png" alt="">
+                                                        </div>
+                                                        <div class="float-right">
+                                                            <span>GIFS</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- share container 3 Tier -->
+
+                            <!-- share container Embed-->
+                            <div class="shareLinks-container embed" ng-show="embedView">
+                                <div class="social-links-wrapper d-flex justify-content-between flex-column">
+                                    <div class="d-flex align-items-start w-100 justify-content-between">
+                                        <div class="back-label">
+                                            <a href="" ng-click="openModal()">
+                                                <i class="fas fa-angle-left"></i>
+                                            </a>
+                                        </div>
+                                        <h4 class="heading">Embed</h4>
+                                        <button type="button" class="close" aria-label="Close" ng-click="closeModal()">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex flex-column w-100 justify-content-center">
+                                            <div class="IFrame">
+                                                <span>Fixed IFrame</span>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="https://gfycat.com/joyouspeskycolt" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-success" type="button" id="button-addon2">Copy</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="IFrame">
+                                                <span>Responsive IFrame</span>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="https://gfycat.com/joyouspeskycolt" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-success" type="button" id="button-addon2">Copy</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end">
+                                        <span ng-show>spacer</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- share container embed -->
+
+                            <!-- share container download-->
+                            <div class="shareLinks-container embed" ng-show="downloadView">
+                                <div class="social-links-wrapper d-flex justify-content-between flex-column">
+                                    <div class="d-flex align-items-start w-100 justify-content-between">
+                                        <div class="back-label">
+                                            <a href="" ng-click="openModal()">
+                                                <i class="fas fa-angle-left"></i>
+                                            </a>
+                                        </div>
+                                        <h4 class="heading">Download</h4>
+                                        <button type="button" class="close" aria-label="Close" ng-click="closeModal()">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d-flex flex-column w-100 justify-content-center">
+                                            <div class="IFrame">
+                                                <span>Small GIF (<i class="fas fa-angle-left"></i> 2MB)</span>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="https://gfycat.com/joyouspeskycolt" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-success" type="button" id="button-addon2">Copy</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="IFrame">
+                                                <span>Large GIF</span>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="https://gfycat.com/joyouspeskycolt" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-outline-success" type="button" id="button-addon2">Copy</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-end">
+                                        <span ng-show>spacer</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- share container download -->
+
+                            <!-- share icon -->
+                            <div class="share-icon d-flex justify-content-end" ng-click="openModal()">
+                                <img alt="" class="img-fluid" src="assets/images/icons/share.png">
+                            </div>
+                            <!-- share icon -->
+
+                            <!-- profile -->
+                            <div class="creator-info d-flex justify-content-between">
+                                <div class="d-flex justify-content-start">
+                                    <div class="creator-profile">
+                                        <img alt="" class="img-fluid" src="../../../assets/images/profile-pic-video.png">
+                                    </div>
+                                    <div class="creator-name">
+                                        Sagar Desai
+                                        <span class="creator-id">@sagardesai</span>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex justify-content-end">
+                                    <div class="mute-icon" ng-show="!mute">
+                                        <button class="button-transparent" ng-click="muteVideo(video.id)" type="button">
+                                            <img class="img-fluid" src="../../../assets/images/icons/un-mute.png" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="unmute-icon" ng-show="mute">
+                                        <button class="button-transparent" ng-click="unmuteVideo(video.id)" type="button">
+                                            <img class="img-fluid" src="../../../assets/images/icons/mute.png" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="prev-icon">
+                                        <button class="button-transparent" ng-click="prevSlide()" type="button">
+                                            <img class="img-fluid" src="../../../assets/images/icons/prev.png" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="play-icon" ng-show="playIcon">
+                                        <button class="button-transparent" ng-click="playTrendingVideo(video.id)" type="button">
+                                            <img class="img-fluid" src="../../../assets/images/icons/Play.png" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="pause-icon" ng-hide="playIcon">
+                                        <button class="button-transparent" ng-click="pauseTrendingVideo(video.id)" type="button">
+                                            <img class="img-fluid" src="../../../assets/images/icons/pause.png" alt="">
+                                        </button>
+                                    </div>
+                                    <div class="next-icon">
+                                        <button class="button-transparent" ng-click="nextSlide()" type="button">
+                                            <img class="img-fluid" src="../../../assets/images/icons/next.png" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- profile -->
+
+                            <video id="{{video.id}}" muted muted poster="{{ videos.videoPoster }}">
+                                <source src="{{ video.videoSrc }}" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                    </div>
+                </data-owl-carousel>
+                <!-- carousal ends -->
+            </div>
+            <div class="col-xl-6">
+                <div class="row">
+                    <!-- facebook Button -->
+                    <div class="col-sm-6">
+                        <button class="btn btn-block button-blue" type="button">
+                            <i class="fas fa-thumbs-up"></i>
+                        </button>
+                    </div>
+
+                    <!-- twitter Button -->
+                    <div class="col-sm-6">
+                        <button class="btn btn-block button-lightblue-f" type="button">
+                            <i class="fab fa-twitter"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- trending videos *4 -->
+                    <div class="col-sm-6" ng-repeat="trendingVideo in trendingVideos">
+                        <div class="other-video">
+                            <!-- copy to clipboard -->
+                            <div class="copy-to-clipboard" ng-show='activeItem==trendingVideo'>
+                                <h4>Link copied to clipboard!</h4>
+                            </div>
+                            <!-- copy to clipboard -->
+
+                            <!-- overlay -->
+                            <div class="video-overlay">
+                                <div class="share-icon d-flex justify-content-end">
+                                    <img alt=""  class="img-fluid animate-show-hide normalHeart" src="../../../assets/images/icons/like.png">
+                                    <img alt=""  class="img-fluid animate-show-hide activeHeart" src="../../../assets/images/icons/heart-colour.png" />
+                                    <img alt="" class="img-fluid" ng-click="setActive(trendingVideo)" src="../../../assets/images/icons/link.png">
+                                </div>
+                                <div class="creator-info tags-info d-flex">
+                                    <span class="tags">#Hashtag</span>
+                                    <span class="tags">#Hashtag</span>
+                                    <span class="tags">#Hashtag</span>
+                                </div>
+                            </div>
+                            <!-- ./overlay -->
+                            <video id="{{trendingVideo.id}}" muted ng-mouseenter="playVideo(trendingVideo.id)" ng-mouseleave="pauseVideo(trendingVideo.id)">
+                                <source src="{{ trendingVideo.videoSrc }}" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="create-wrapper home-create-link">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-label">
+                                <h5>Weevid: Make and share short videos and mashups</h5>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <!-- create new video input tag -->
+                            <div class="video-src">
+                                <form name="CreateVideofrm" class="video-control" novalidate>
+                                    <div class="form-group">
+                                        <input class="form-control" id="ytUrl" name="ytUrl" ng-model="urlObj.yt" value="{{urlObj.yt}}" placeholder="Copy and paste video url from youtube" required type="url" ng-class="{'border border-danger': CreateVideofrm.ytUrl.$dirty && CreateVideofrm.ytUrl.$invalid }" ng-change="getVideoUrl(urlObj)" />
+                                        <i class=" text-danger fas fa-circle-notch fa-spin fa-3x loader" ng-show="loader"></i>
+                                        <div class="form-group" ng-show="CreateVideofrm.ytUrl.$dirty && CreateVideofrm.ytUrl.$invalid">
+                                            <small class="text-danger" ng-show="CreateVideofrm.ytUrl.$error.required">Required</small>
+                                            <small class="text-danger" ng-show="CreateVideofrm.ytUrl.$error.url">Unable
+                                                to retrieve
+                                                media</small>
+                                            <small class="text-danger" ng-show="CreateVideofrm.ytUrl.$error.url">{{ urlObj.yt }}</small>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- create video steps -->
+                            <div class="createVideo-steps d-md-flex justify-content-center">
+                                <!-- step 1 -->
+                                <div>
+                                    <div class="steps-image">
+                                        <img alt="" class="img-fluid" src="assets/images/create-videos/step-one.png" />
+                                    </div>
+                                    <p>Found something online?
+                                        <br>Paste URL link</p>
+                                </div>
+                                <!-- arrow -->
+                                <div class="steps-arrow">
+                                    <img alt="" class="img-fluid" src="assets/images/create-videos/right-arrow.png" />
+                                </div>
+                                <!-- step 2 -->
+                                <div>
+                                    <div class="d-lg-inline-flex justify-content-center steps-image">
+                                        <img alt="" class="img-fluid" src="assets/images/create-videos/step-two-a.png" style="height:56px;" />
+                                        <p>or</p>
+                                        <img alt="" class="img-fluid" src="assets/images/create-videos/step-two-b.png" />
+                                    </div>
+                                    <p>Edit a video or
+                                        <br> merge 2 videos</p>
+                                </div>
+                                <!-- arrow -->
+                                <div class="steps-arrow">
+                                    <img alt="" class="img-fluid" src="assets/images/create-videos/right-arrow.png" />
+                                </div>
+                                <!-- step 3 -->
+                                <div>
+                                    <div class="steps-image">
+                                        <img alt="" class="img-fluid" src="assets/images/create-videos/step-three.png" />
+                                    </div>
+                                    <p>Create a new video</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- scrolling video -->
+                <div class="videos-wrapper videos">
+                    <div class="row">
+                        <div class="col-md-6 col-xl-3" ng-repeat="video in videos">
+                            <div class="other-video">
+                                <!-- copy to clipboard -->
+                                <div class="copy-to-clipboard" ng-show='activeItem==video'>
+                                    <h4>Link copied to clipboard!</h4>
+                                </div>
+                                <!-- copy to clipboard -->
+                                <!-- overlay -->
+                                <div class="video-overlay">
+                                    <div class="share-icon d-flex justify-content-end">
+                                        <img alt=""  class="img-fluid animate-show-hide normalHeart" src="../../../assets/images/icons/like.png">
+                                        <img alt=""  class="img-fluid animate-show-hide activeHeart" src="../../../assets/images/icons/heart-colour.png" />
+                                        <img alt="" class="img-fluid" ng-click="setActive(video)" src="../../../assets/images/icons/link.png">
+                                    </div>
+                                    <div class="creator-info tags-info d-flex">
+                                        <span class="tags">#Hashtag</span>
+                                        <span class="tags">#Hashtag</span>
+                                        <span class="tags">#Hashtag</span>
+                                    </div>
+                                </div>
+                                <!-- ./overlay -->
+                                <video id="{{video.id}}" muted ng-mouseenter="playVideo(video.id)" ng-mouseleave="pauseVideo(video.id)">
+                                    <source src="{{ video.videoSrc }}" type="video/mp4">
+                                    Your browser does not support HTML5 video.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- scrolling video -->
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+.tab-wrapper {
+    .nav-tabs {
+        border-bottom: 0.5px solid #616161;
+
+        .nav-item {
+            &:first-child {
+                .nav-link {
+                    padding-left: 0;
+                }
+            }
+
+            .nav-link {
+                @include font-size($base-font-sizes);
+                @include font-styles(normal, 600);
+                color: $secondaryColor;
+                text-transform: capitalize;
+                border: none;
+                background: transparent;
+                padding: 10px 18px;
+
+                &.active {
+                    background: transparent;
+                    color: $green;
+                }
+            }
+        }
+
+    }
+}

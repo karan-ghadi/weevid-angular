@@ -1,0 +1,71 @@
+<div class="profile-wrapper">
+  <div class="profile-details d-flex">
+    <div class="profile-photo">
+      <img alt="" class="img-fluid" src="" />
+    </div>
+    <div class="profile-info">
+      <h4 class="profile-name">Sagar Desai</h4>
+      <h5 class="username">@sagardesai</h5>
+      <p class="profile-description">Add a description</p>
+      <a class="profile-url" href="#">Add a URL</a>
+    </div>
+    <div class="ml-auto">
+      <button class="btn button-outline" ng-click="navigateToTab('/account-settings/profile')">
+        Edit
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="videos-wrapper videos">
+        <div class="row">
+          <div class="col-md-6 col-xl-3" ng-repeat="video in videos">
+            <div class="other-video">
+              <!-- copy to clipboard -->
+              <div class="copy-to-clipboard" ng-show="activeItem==video">
+                <h4>Link copied to clipboard!</h4>
+              </div>
+              <!-- copy to clipboard -->
+              <!-- overlay -->
+              <div class="video-overlay">
+                <div class="share-icon d-flex justify-content-end">
+                  <img
+                    alt=""
+                    class="img-fluid animate-show-hide normalHeart"
+                    src="../../../assets/images/icons/like.png"
+                  />
+                  <img
+                    alt=""
+                    class="img-fluid animate-show-hide activeHeart"
+                    src="../../../assets/images/icons/heart-colour.png"
+                  />
+                  <img
+                    alt=""
+                    class="img-fluid"
+                    ng-click="setActive(video)"
+                    src="../../../assets/images/icons/link.png"
+                  />
+                </div>
+                <div class="creator-info tags-info d-flex">
+                  <span class="tags">#Hashtag</span>
+                  <span class="tags">#Hashtag</span>
+                  <span class="tags">#Hashtag</span>
+                </div>
+              </div>
+              <!-- ./overlay -->
+              <video
+                id="{{ video.id }}"
+                muted
+                ng-mouseenter="playVideo(video.id)"
+                ng-mouseleave="pauseVideo(video.id)"
+              >
+                <source src="{{ video.videoSrc }}" type="video/mp4" />
+                Your browser does not support HTML5 video.
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

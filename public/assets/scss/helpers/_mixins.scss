@@ -1,0 +1,172 @@
+/**
+ * transition
+ * @param $args [ transition duration and type (ease, ease-in, all)]
+ */
+@mixin transition($args) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+/**
+ * transform
+ * @param $args [ transform type (scale, rotate) ]
+ */
+@mixin transform($args) {
+  -webkit-transform: $args;
+  -moz-transform: $args;
+  -ms-transform: $args;
+  -o-transform: $args;
+  transform: $args;
+}
+
+/**
+ * background image
+ * @param $src [ path of your image]
+ * @param $pos [ background position of the image ]
+ */
+@mixin background($src, $pos:50% 50%) {
+  background: $src;
+  background-size: cover;
+  background-position: $pos;
+}
+
+/**
+ * opacity
+ * @param $opacity [ opacity (0 - 1) ]
+ */
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie);
+  //IE8
+}
+
+/**
+ * Adding dimensions
+ * A simple mixin to give dimensions to a box.
+ * @param $width [ width ]
+ * @param $height [ height ]
+ */
+@mixin box($width, $height:$width) {
+  width: $width;
+  height: $height;
+}
+
+/**
+ * Vertical centering
+ */
+@mixin center-vertically {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+}
+
+/**
+ * Positioning
+ * Easy and quick CSS positioning, thanks to Hugo Giraudel.
+ * @param $args [top 35px left 25]
+ */
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+
+    @if $i and $i+1 <=length($args) and type-of(nth($args, $i + 1))==number {
+      #{$o}: nth($args, $i + 1);
+    }
+
+  }
+
+  position: $position;
+}
+
+/* pseudo */
+@mixin pseudo($display:block, $pos:absolute, $content:'') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+// Positioning helpers
+@mixin absolute($args:'') {
+  @include position(absolute, $args);
+}
+
+@mixin fixed($args:'') {
+  @include position(fixed, $args);
+}
+
+@mixin relative($args:'') {
+  @include position(relative, $args);
+}
+
+/* Placeholders */
+/* They're a pain as you have to set the style in all the separate formats,
+this sorts it for you.*/
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+}
+
+// Just in case there are people how aren't used to using @content here is a usage example
+input,
+textarea {
+  @include input-placeholder {
+    // color: $grey;
+  }
+
+}
+
+/**
+ * border radius
+ * @param $args [ radius(20px)]
+ */
+@mixin border-radius($args) {
+  -webkit-border-radius: $args;
+  -moz-border-radius: $args;
+  -ms-border-radius: $args;
+  -o-border-radius: $args;
+  border-radius: $args;
+}
+
+/**
+ * box shadow
+ * @param $args [0 .5rem 1rem rgba(0, 0, 0, .15) !important]
+ */
+@mixin box-shadow($args) {
+  box-shadow: $args;
+  -webkit-box-shadow: $args;
+  -moz-box-shadow: $args;
+  -ms-box-shadow: $args;
+}
+
+/**
+ * Font style and weight
+ * @param $style [ style ]
+ * @param $weight [ weight ]
+ */
+@mixin font-styles($style, $weight) {
+  font-style: $style;
+  font-weight: $weight;
+}

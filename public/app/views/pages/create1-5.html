@@ -1,0 +1,77 @@
+<div class="create-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="back-label">
+                <a href="" ng-click="goBack()">
+                    <i class="fas fa-angle-left"></i> Back
+                </a>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="video-src">
+                <div class="video-wrapper">
+                    <div class="creator-info d-flex justify-content-end">
+                        <!-- code commented -->
+                        <div class="d-flex justify-content-end">
+                            <div class="mute-icon" ng-show="!mute">
+                                <button class="button-transparent" ng-click="muteVideo('videoId')" type="button">
+                                    <img class="img-fluid" src="../../../assets/images/icons/un-mute.png" alt="">
+                                </button>
+                            </div>
+                            <div class="unmute-icon" ng-show="mute">
+                                <button class="button-transparent" ng-click="unmuteVideo('videoId')" type="button">
+                                    <img class="img-fluid" src="../../../assets/images/icons/mute.png" alt="">
+                                </button>
+                            </div>
+                            <div class="play-icon" ng-show="playIcon">
+                                <button class="button-transparent" ng-click="playTrendingVideo('videoId')" type="button">
+                                    <img class="img-fluid" src="../../../assets/images/icons/Play.png" alt="">
+                                </button>
+                            </div>
+                            <div class="pause-icon" ng-hide="playIcon">
+                                <button class="button-transparent" ng-click="pauseTrendingVideo('videoId')" type="button">
+                                    <img class="img-fluid" src="../../../assets/images/icons/pause.png" alt="">
+                                </button>
+                            </div>
+                        </div>
+                        <!-- ./code commented -->
+                    </div>
+                    <video id="videoId" muted="muted">
+                        <source src="../../../assets/videos/temp-video.mp4" type="video/mp4"></video>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <form name="videoTagsForm" ng-submit="onVideoTagsSubmit(videoObj)">
+                <div class="videoDetails-container">
+                    <div class="inner-box">
+                        <h4>Source URL</h4>
+                        <div class="form-group">
+                            <input class="form-control" name="url" ng-model="videoObj.url" placeholder="Source URL" type="url" />
+                        </div>
+                    </div>
+                    <div class="inner-box add-tags">
+                        <h4>Add Tags</h4>
+                        <div class="form-group">
+                            <textarea class="form-control" name="tags" ng-model="videoObj.tags" placeholder="Enter tags"></textarea>
+                        </div>
+                        <span>(Place a comma between each tag. Example: cats, San Francisco)</span>
+                        <p>
+                            By clicking <span>"Upload to Weevid"</span> you agree to our terms of service and our Privacy Policy
+                        </p>
+                    </div>
+                </div>
+                <div class="exit-buttons">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <button class="btn btn-block button-darkgray" ng-click="navigateToTab('create1-1')" type="button">Start Over</button>
+                        </div>
+                        <div class="col-xl-6">
+                            <button class="btn btn-block button-green" type="submit">Upload to Weevid</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

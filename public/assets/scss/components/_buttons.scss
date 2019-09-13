@@ -1,0 +1,81 @@
+/**
+ * default button: blue
+*/
+.button-default {
+  @include border-radius(2px);
+  @include font-size($base-font-sizes);
+  @include font-styles(normal, normal);
+  padding: 10px 0;
+  color: $secondaryColor;
+}
+
+.button-transparent {
+  @extend .button-default;
+  background: transparent;
+  border: 0px;
+
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+.button-gray {
+  @extend .button-default;
+  background: $darkGray;
+}
+
+.button-darkgray {
+  @extend .button-default;
+  background: $optionBtnBg;
+}
+
+.button-blue {
+  @extend .button-default;
+  background: $blue;
+}
+
+.button-lightblue {
+  @extend .button-default;
+  background: $lightBlue;
+}
+
+.button-lightblue-f {
+  @extend .button-default;
+  background: $skyBlue;
+}
+
+.button-green {
+  @extend .button-default;
+  background: $green;
+}
+
+.button-darkgreen {
+  @extend .button-default;
+  background: $lightGreen;
+}
+
+.button-outline {
+  @include border-radius(2px);
+  @include font-size($small-font-sizes);
+  @include font-styles(normal, 600);
+  padding: 10px 19px;
+  color: $lightGray;
+  background: transparent;
+  border: 1px solid $lightGray;
+
+}
+
+.btn-outline-success {
+  @include border-radius(0);
+  background: $green;
+
+  .fas {
+    color: $secondaryColor;
+  }
+
+  &:hover {
+    @include border-radius(0);
+    background: $green;
+  }
+}

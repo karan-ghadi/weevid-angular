@@ -1,0 +1,116 @@
+<div class="account-setting-wrapper">
+    <div class="tab-wrapper d-flex justify-content-center">
+        <ul class="nav nav-tabs" id="settingsTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" ng-class="{active:isSet('profile')}" ng-click="setTab('profile')">Profile</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-class="{active:isSet('account')}" ng-click="setTab('account')">Account</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ng-class="{active:isSet('password')}" ng-click="setTab('password')">Password</a>
+            </li>
+        </ul>
+    </div>
+    <div class="tab-content d-flex justify-content-center" id="settingsTabContent">
+        <div class="tab-pane fade" ng-show="isSet('profile')" ng-class="{'active show':isSet('profile')}">
+            <form name="profileForm" ng-submit="onProfileSubmit(profileObj)" novalidate>
+                <div class="form-group">
+                    <label class="form-label">Name</label>
+                    <input autofocus class="form-control" maxlength="30" name="name" ng-model="profileObj.name"
+                        ng-pattern="/^[a-zA-Z\s]*$/" required type="text">
+                    <div class="counter-widget d-flex justify-content-end">
+                        <span class="counter">{{ profileObj.name.length > 0 ? profileObj.name.length : 0 }}</span>
+                        <span class="separtor">/</span>
+                        <span class="max-count">30</span>
+                    </div>
+                    <small class="text-danger"
+                        ng-show="profileForm.$submitted && profileForm.name.$error.required">*Field can't be left
+                        blank.</small>
+                    <small class="text-danger"
+                        ng-show="profileForm.$submitted && profileForm.name.$error.pattern">*Enter a valid name.</small>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-control" maxlength="150" name="description" ng-model="profileObj.description"
+                        required></textarea>
+                    <div class="counter-widget d-flex justify-content-end">
+                        <span
+                            class="counter">{{ profileObj.description.length > 0 ? profileObj.description.length : 0 }}</span>
+                        <span class="separtor">/</span>
+                        <span class="max-count">150</span>
+                    </div>
+                    <small class="text-danger"
+                        ng-show="profileForm.$submitted && profileForm.description.$error.required">*Field can't be left
+                        blank.</small>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Website URL</label>
+                    <input type="url" class="form-control" name="url" ng-model="profileObj.url" required>
+                    <small class="text-danger"
+                        ng-show="profileForm.$submitted && profileForm.url.$error.required">*Field can't be left
+                        blank.</small>
+                    <small class="text-danger" ng-show="profileForm.$submitted && profileForm.url.$error.url">*Enter a
+                        valid URL.</small>
+                </div>
+                <div class="form-button">
+                    <button class="btn btn-block button-green"
+                        ng-disabled="profileForm.name.$invalid && loginForm.description.$invalid && profileForm.url.$invalid"
+                        type="submit">Save Changes</button>
+                </div>
+            </form>
+        </div>
+        <div class="tab-pane fade" ng-show="isSet('account')" ng-class="{'active show':isSet('account')}">
+            <form name="accountForm" ng-submit="onAccountSubmit(accountObj)" novalidate>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input class="form-control" type="email" name="email" ng-model="accountObj.email"
+                        ng-pattern="/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/" required>
+                    <small class="text-danger d-block"
+                        ng-show="accountForm.$submitted && accountForm.email.$error.pattern">*Enter a valid
+                        Email.</small>
+                    <small class="text-danger"
+                        ng-show="accountForm.$submitted && accountForm.email.$error.required">*Field can't be left
+                        blank.</small>
+                </div>
+                <div class="form-button">
+                    <button class="btn btn-block button-green" type="submit">Save Changes</button>
+                </div>
+            </form>
+        </div>
+        <div class="tab-pane fade" ng-show="isSet('password')" ng-class="{'active show':isSet('password')}">
+            <form name="passwordForm" ng-submit="onPasswordSubmit(passwordObj)" novalidate>
+                <div class="form-group">
+                    <label class="form-label">Current Password</label>
+                    <input class="form-control" type="password" name="password" ng-model="passwordObj.password"
+                        required>
+                    <small class="text-danger"
+                        ng-show="passwordForm.$submitted && passwordForm.password.$error.required">*Field can't be left
+                        blank.</small>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">New Password</label>
+                    <input class="form-control" type="password" name="newPassword" ng-model="passwordObj.newPassword"
+                        required>
+                    <small class="text-danger"
+                        ng-show="passwordForm.$submitted && passwordForm.newPassword.$error.required">*Field can't be
+                        left blank.</small>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Confirm New Password</label>
+                    <input class="form-control" type="password" name="confirmPassword"
+                        ng-model="passwordObj.confirmPassword" compare-to="passwordObj.newPassword" required>
+                    <small class="text-danger"
+                        ng-show="passwordForm.$submitted && passwordForm.confirmPassword.$error.required">*Field can't
+                        be left blank.</small>
+                    <small class="text-danger"
+                        ng-show="passwordForm.$submitted && passwordForm.confirmPassword.$error.compareTo">*New password
+                        and confirm new password do not match.</small>
+                </div>
+                <div class="form-button">
+                    <button class="btn btn-block button-green" type="submit">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+header {
+  .navbar {
+    background-color: $primaryColor;
+
+    // height: 46px;
+    .navbar-brand {
+      margin-right: 20px;
+    }
+
+    .form-inline {
+      flex-flow: row;
+      flex-grow: 1;
+
+      .form-control {
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+      }
+    }
+
+    .fas.fa-bars {
+      color: $secondaryColor;
+    }
+
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: $secondaryColor;
+          font-family: $baseFont;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 19px;
+          margin-left: 18px;
+        }
+
+        .active {
+          color: $green;
+        }
+      }
+    }
+  }
+
+  .navbar-toggler {
+    span.navbar-toggler-icon {
+      background-color: transparent;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  .btn-outline-success {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+}

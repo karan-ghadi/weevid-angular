@@ -1,0 +1,30 @@
+// font family
+$baseFont: 'Lato',sans-serif;
+
+//colors
+$primaryColor:#000000;
+$secondaryColor:#ffffff;
+$lightGray:#BDBDBD;
+$inputText: #9E9E9E;
+$darkGray: #757575;
+$videoBg: #C4C4C4;
+$inputBg: #E0E0E0;
+$blue: #3B5998;
+$lightBlue: #0288D1;
+$skyBlue: #0084B4;
+$green: #1BB76E;
+$lightGreen: #009688;
+$blackBg: #212121;
+$boxBg: #282828;
+$optionBtnBg: #424242;
+
+
+// Responsive Media Screen variable
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$media-breakpoint-up-xs:"(min-width:320px) and (max-width:767.98px)";
+$media-breakpoint-up-sm: "(min-width:768px) and (max-width:1279.98px)";
+$media-breakpoint-up-md:"(min-width:1280px) and (max-width:1365.98px)";
+$media-breakpoint-up-lg:"(min-width:1366px) and (max-width:1439.98px)";
+$media-breakpoint-up-xl:"(min-width:1440px) and (max-width:1659.98px)";
+$media-breakpoint-up-xxl:"(min-width:1660px) and (max-width:1920px)";
